@@ -1,7 +1,8 @@
 import { HiShoppingCart } from "react-icons/hi2";
 import { booksData } from "../../data/books";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
+
+import { useCart } from "../../hooks/useCart";
 
 function BookList() {
   const { addToCart } = useCart();
@@ -14,7 +15,10 @@ function BookList() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
           {booksData.map((book) => (
-            <div className="relative group bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-transform transform hover:-translate-y-1">
+            <div
+              key={book.id}
+              className="relative group bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-transform transform hover:-translate-y-1"
+            >
               <img
                 src={book.image}
                 alt={book.title}

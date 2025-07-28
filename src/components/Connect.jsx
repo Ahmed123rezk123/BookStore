@@ -4,7 +4,6 @@ function Connect() {
   return (
     <section className="bg-[#faebd4aa] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Left */}
         <div className="space-y-6">
           <h1 className="font-bold text-4xl sm:text-5xl leading-tight text-center sm:text-left">
             Join Book Lovers Community and Get Latest Updates

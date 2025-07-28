@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.jpg";
 import { HiShoppingBag } from "react-icons/hi2";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../hooks/useCart";
 
 function Navbar() {
   const { cartCount } = useCart();
@@ -32,11 +32,11 @@ function Navbar() {
           </Link>
         </div>
 
-        <div>
+        <div className="relative">
           <Link to="/cart" className="hover:text-[#ffc46b]">
             <HiShoppingBag className="text-3xl" />
-            {cartCount > -1 && (
-              <span className="absolute top-5 right-5 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {cartCount}
               </span>
             )}

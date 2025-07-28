@@ -7,7 +7,7 @@ import Cart from "./Pages/Cart/Cart";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import Footer from "./components/Footer";
-import Connect from "./components/connect";
+import Connect from "./components/Connect";
 
 function App() {
   return (

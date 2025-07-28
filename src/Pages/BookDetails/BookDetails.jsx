@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { booksData } from "../../data/books";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../hooks/useCart";
 
 function BookDetails() {
   const { addToCart } = useCart();

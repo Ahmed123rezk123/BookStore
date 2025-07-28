@@ -1,6 +1,3 @@
-import React from "react";
-// import Auther1 from "../../assets/author-image02.jpg";
-// import Auther2 from "../../assets/author-image04.jpg";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 import Ahmed from "../../assets/Ahmed.jpg";

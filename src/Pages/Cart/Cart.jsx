@@ -1,5 +1,6 @@
 import React from "react";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../hooks/useCart";
+
 import { HiPlus, HiMinus, HiTrash } from "react-icons/hi";
 
 function Cart() {

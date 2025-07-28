@@ -1,21 +1,21 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (book) => {
-    setCartItems((prevItems) => {
-      const existing = prevItems.find((item) => item.id === book.id);
-      if (existing) {
-        return prevItems.map((item) =>
+    const existing = cartItems.find((item) => item.id === book.id);
+    if (existing) {
+      setCartItems((prev) =>
+        prev.map((item) =>
           item.id === book.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      } else {
-        return [...prevItems, { ...book, quantity: 1 }];
-      }
-    });
+        )
+      );
+    } else {
+      setCartItems((prev) => [...prev, { ...book, quantity: 1 }]);
+    }
   };
 
   const increaseQty = (id) => {
@@ -56,8 +56,4 @@ export function CartProvider({ children }) {
       {children}
     </CartContext.Provider>
   );
-}
-
-export function useCart() {
-  return useContext(CartContext);
 }

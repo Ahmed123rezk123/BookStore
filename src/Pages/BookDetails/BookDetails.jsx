@@ -10,7 +10,7 @@ function BookDetails() {
   if (!book) return <p className="text-center text-red-500">Book not found</p>;
 
   return (
-    <div className="max-w-4xl mx-auto bg-gray-100 rounded-xl shadow-md p-6 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+    <div className="max-w-4xl mx-auto bg-gray-100 rounded-xl shadow-md p-6 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 pb-20 pt-[150px]">
       {/* Image */}
       <div className="flex justify-center">
         <img

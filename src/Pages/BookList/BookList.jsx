@@ -7,7 +7,7 @@ import { useCart } from "../../hooks/useCart";
 function BookList() {
   const { addToCart } = useCart();
   return (
-    <div className="bg-gray-100 ">
+    <div className="bg-gray-100 pb-20 pt-[150px] ">
       <section className="py-12 px-4 max-w-7xl mx-auto">
         <h2 className="section-title text-2xl text-[#f7a72f]">
           📚 Featured Books

@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.jpg";
-import { HiShoppingBag } from "react-icons/hi2";
+import { HiShoppingBag, HiOutlineMenu, HiX } from "react-icons/hi";
+import { useState } from "react";
 import { useCart } from "../hooks/useCart";
 
 function Navbar() {
   const { cartCount } = useCart();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <nav className="p-2 mx-6 inset-shadow-sm">
-      <div className="container mx-auto flex items-center justify-between">
+    <nav className="fixed top-0 w-full z-50 bg-white shadow-md h-20 px-4">
+      <div className="container mx-auto flex items-center h-full">
         <Link to="/" className="text-2xl font-bold flex items-center">
           <img
             src={Logo}
@@ -17,7 +22,7 @@ function Navbar() {
           Bookstore
         </Link>
 
-        <div className="hidden md:flex space-x-6 text-2xl">
+        <div className="hidden  md:flex space-x-6 text-2xl ml-auto">
           <Link to="/" className="hover:text-[#ffc46b]">
             Home
           </Link>
@@ -32,8 +37,8 @@ function Navbar() {
           </Link>
         </div>
 
-        <div className="relative">
-          <Link to="/cart" className="hover:text-[#ffc46b]">
+        <div className="ml-auto flex items-center gap-6">
+          <Link to="/cart" className="relative hover:text-[#ffc46b]">
             <HiShoppingBag className="text-3xl" />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -41,8 +46,47 @@ function Navbar() {
               </span>
             )}
           </Link>
+
+          <div className="md:hidden">
+            <button onClick={toggleMenu}>
+              {isOpen ? (
+                <HiX className="text-3xl" />
+              ) : (
+                <HiOutlineMenu className="text-3xl" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
+
+      {isOpen && (
+        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-md py-4 px-6 flex flex-col gap-4 text-xl z-40">
+          <Link to="/" onClick={toggleMenu} className="hover:text-[#ffc46b]">
+            Home
+          </Link>
+          <Link
+            to="/books"
+            onClick={toggleMenu}
+            className="hover:text-[#ffc46b]"
+          >
+            Books
+          </Link>
+          <Link
+            to="/about"
+            onClick={toggleMenu}
+            className="hover:text-[#ffc46b]"
+          >
+            About
+          </Link>
+          <Link
+            to="/contact"
+            onClick={toggleMenu}
+            className="hover:text-[#ffc46b]"
+          >
+            Contact
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

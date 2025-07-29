@@ -9,7 +9,7 @@ import { FaYoutube } from "react-icons/fa6";
 function Contact() {
   return (
     <>
-      <div className="bg-[#faebd4aa] py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#faebd4aa] pb-20 pt-[150px] px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="section-title font-bold  text-5xl"> Contact Us</h2>
           <p className="mt-4 text-gray-600 text-lg leading-relaxed">

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Landing() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
@@ -9,12 +11,12 @@ function Landing() {
         Your one-stop shop for all your reading needs!
       </p>
       <div className="flex space-x-4">
-        <a
-          href="/books"
+        <Link
+          to="/books"
           className="px-4 py-2 bg-[#ffc46b] text-white rounded hover:bg-[#f8b44e]"
         >
           Browse Books
-        </a>
+        </Link>
       </div>
     </div>
   );
